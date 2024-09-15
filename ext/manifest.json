@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Time-card submitter",
+  "version": "0.1.0",
+  "description": "copies last time card into current and submit",
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "background": {
+    "service_worker": "scripts/worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://eclf.fa.em2.oraclecloud.com/*"],
+      "js": ["scripts/content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "externally_connectable": {
+    "matches": ["https://*/*"]
+  },
+  "permissions": ["scripting", "alarms", "notifications"],
+  "host_permissions": ["https://*/*"]
+}
