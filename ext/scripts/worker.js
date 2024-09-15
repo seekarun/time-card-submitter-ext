@@ -20,9 +20,9 @@ chrome.runtime.onMessage.addListener(async (request) => {
 
 // TODO: make this user configurable
 const AlertTime = {
-  day: 1, // Monday = 1
-  hour: 9,
-  minute: 46,
+  day: 5, // Monday = 1
+  hour: 12,
+  minute: 0,
 };
 
 chrome.runtime.onInstalled.addListener(async ({ reason }) => {
